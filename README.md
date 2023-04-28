@@ -1,2 +1,2 @@
 # Dynamic-BF-Index
-Dynamic Bloom FIlter that can dynamically resize to maintain a maximum false-positive rate.
+Dynamic Bloom Filter that can dynamically resize to maintain a low probability of false-positives.
