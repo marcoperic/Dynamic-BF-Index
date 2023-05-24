@@ -15,8 +15,16 @@ class Filter:
         self.length = 0
 
     def insert(self, element):
-        hashes = []
-        hashes.append()
+        if type(element) == str:
+            print('str input')
+            element = bytes(element, 'utf-8')
+        else:
+            element = bytes(element)
+
+        hashes = [x(element) for x in self.hash_functions]
+        for i in hashes: self.data[i] = 1
+        
+        return None
     
     def query(self, element):
         return None
@@ -45,5 +53,5 @@ class Filter:
     #         obj = bytes(obj, 'utf-8')
     #     else:
     #         obj = bytes(obj)
-    #
+    
     #     return [x(obj) for x in self.hash_functions]
