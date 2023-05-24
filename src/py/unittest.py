@@ -1,4 +1,4 @@
 from filter import Filter
 
-x = Filter(20, 3)
+x = Filter(10000, 3)
 print(x.insert('123'))
