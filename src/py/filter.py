@@ -39,11 +39,11 @@ class Filter:
         h.update(bytes(x))
         return int(h.hexdigest(), 16) % self.size
     
-    def test(self, obj):
-        if type(obj) == str:
-            print('str input')
-            obj = bytes(obj, 'utf-8')
-        else:
-            obj = bytes(obj)
-
-        return [x(obj) for x in self.hash_functions]
+    # def test(self, obj):
+    #     if type(obj) == str:
+    #         print('str input')
+    #         obj = bytes(obj, 'utf-8')
+    #     else:
+    #         obj = bytes(obj)
+    #
+    #     return [x(obj) for x in self.hash_functions]
