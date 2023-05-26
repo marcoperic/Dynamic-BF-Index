@@ -9,7 +9,6 @@ class Filter:
     def __init__(self, size, num_h = 3) -> None:
         self.size = size
         self.min_size = size
-        self.num_h = num_h
         self.hash_functions = [self.h1, self.h2, self.h3]
         self.data = [0] * size
         self.length = 0
