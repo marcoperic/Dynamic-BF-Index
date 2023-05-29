@@ -1,5 +1,6 @@
 from filter import Filter
 
 x = Filter(10000, 3)
-# print(x.insert('123'))
-# print(x.calculateFP())
+x.insert('123')
+print(x.query('123'))
+print(x.query('12'))
