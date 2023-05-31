@@ -55,8 +55,6 @@ class Filter:
     
     def encode(self, element):
         if type(element) == str:
-            element = bytes(element, 'utf-8')
+            return bytes(element, 'utf-8')
         else:
-            element = bytes(element)
-
-        return element
+            return bytes(element)
