@@ -1,43 +1,33 @@
 #include <iostream>
+#include "hashfunctions.hpp"
 using namespace std;
 
 class Filter
 {
-    template<typename T>
-    struct HashFunction{typedef void (*type) (T const& element);};
-    template<typename T>
-    void h1(T const& element);
-    template<typename T>
-    void h2(T const& element);
-    template<typename T>
-    void h3(T const& element);
+    private:
+    int size = 0;
 
     public:
     Filter()
     {
     }
 
-    private:
-    int size = 0;
-
-    void h1()
+    template <typename T>
+    bool insert(T const& element)
     {
-
+        return true;
     }
 
-    void h2()
+    template <typename T>
+    bool query(T const& element)
     {
-
-    }
-
-    void h3()
-    {
-
+        return true;
     }
 };
 
 int main()
 {
     Filter f = Filter();
+    f.insert("goomba");
     return 0;
 }
