@@ -3,10 +3,11 @@
 #include <string>
 #include "stdlib.h"
 #include "md5.cpp"
+#include "BigInt.hpp"
 using namespace std;
 
 template<typename T>
-long long h1(T const& element) // md5
+long long h1(T const& element, size_t filter_size) // md5
 {
     auto hash = ConstexprHashes::md5(element);
     string temp = "";
@@ -16,18 +17,20 @@ long long h1(T const& element) // md5
         temp.append(to_string(x));
     }
 
-    cout << temp << endl;
-    return 0;
+    BigInt n(temp);
+    n %= filter_size;
+
+    return n.to_long_long();
 }
 
 template<typename T>
-int h2(T const& element) // sha1
+int h2(T const& element, size_t filter_size) // sha1
 {
     return 2;
 }
 
 template<typename T>
-int h3(T const& element) // sha224
+int h3(T const& element, size_t filter_size) // sha224
 {
     return 3;
 }
