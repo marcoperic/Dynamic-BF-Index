@@ -13,3 +13,12 @@ For a bloom filter with an underlying array of size, ```m```, and a number of ha
 As such, for a bloom filter occupying 1MB of memory, using three hash functions, and containing 10000 elements (insertions), the probability of a false positive is 1 in 19,069,897 (1 / 0.000000052).
 
 For a database with millions or billions of accesses at a time, this is unacceptable. However, for indexing small file systems, such a small memory footprint and low false-positive probability is very impressive. The potential for scalability is also impressive. For a user who wants to maintain the same probability of 1 in 19 million, but with a much larger amount of elements, 319,104, the memory footprint only increases to 32MB.
+
+## Objectives
+- [x] Create a working Bloom Filter implementation in Python
+- [x] Port the working implementation to C++
+- [ ] Port the working implementation to Java
+- [ ] Port the working implementation to Rust
+- [ ] Perform benchmarks and empirical runtime analysis on each implementation
+- [ ] Use matplotlib to create figures and diagrams showing the differences in runtime
+- [ ] Modify the Bloom Filter so that it can dynamically resize 
