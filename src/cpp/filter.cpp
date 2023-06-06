@@ -1,5 +1,5 @@
 #include <iostream>
-#include "hashfunctions.hpp"
+#include "include/hashfunctions.hpp"
 using namespace std;
 
 class Filter
@@ -15,7 +15,6 @@ class Filter
     template <typename T>
     bool insert(T const& element)
     {
-        cout << h1(element, 1000) << endl;
         return true;
     }
 
