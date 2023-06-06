@@ -15,6 +15,7 @@ class Filter
     template <typename T>
     bool insert(T const& element)
     {
+        cout << h1(element) << endl;
         return true;
     }
 
