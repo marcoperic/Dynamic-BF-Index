@@ -5,7 +5,7 @@ using namespace std;
 class Filter
 {
     private:
-    int size = 0;
+    int size = 10000;
 
     public:
     Filter()
@@ -15,6 +15,7 @@ class Filter
     template <typename T>
     bool insert(T const& element)
     {
+        long long hash_value[3] = {h1(element, size), h2(element, size), h3(element, size)};
         return true;
     }
 

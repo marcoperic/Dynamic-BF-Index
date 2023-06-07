@@ -3,7 +3,9 @@
 #include <string>
 #include "stdlib.h"
 #include "md5.cpp"
+#include "sha1.hpp"
 #include "BigInt.hpp"
+#include "hex_conv.hpp"
 using namespace std;
 
 template<typename T>
@@ -24,13 +26,19 @@ long long h1(T const& element, size_t filter_size) // md5
 }
 
 template<typename T>
-int h2(T const& element, size_t filter_size) // sha1
+long long h2(T const& element, size_t filter_size) // sha1
 {
-    return 2;
+    SHA1 checksum;
+    checksum.update(element);
+    string hash = checksum.final();
+    BigInt n(hexToDecimalString(hash));
+    n %= filter_size;
+    
+    return n.to_long_long();
 }
 
 template<typename T>
-int h3(T const& element, size_t filter_size) // sha224
+long long h3(T const& element, size_t filter_size) // sha224
 {
     return 3;
 }
