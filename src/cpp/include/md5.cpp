@@ -242,18 +242,3 @@ constexpr md5_type md5(const char (&data)[n]) {
 
 } // namespace ConstexprHashes
 #endif //CONSTEXPR_HASH_MD5_H
-
-
-// #include <iostream>
-// #include <iomanip>
-
-// using namespace std;
-
-// int main() {
-//     auto hash = ConstexprHashes::md5("jaklsdjlkad");
-//     cout << hex;
-//     for (auto i : hash) {
-//         cout << (static_cast<int>(i) & 0xff);
-//     }
-//     cout << endl;
-// }
