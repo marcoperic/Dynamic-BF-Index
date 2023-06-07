@@ -6,6 +6,7 @@
 #include "sha1.hpp"
 #include "BigInt.hpp"
 #include "hex_conv.hpp"
+#include "sha256.hpp"
 using namespace std;
 
 template<typename T>
@@ -38,7 +39,11 @@ long long h2(T const& element, size_t filter_size) // sha1
 }
 
 template<typename T>
-long long h3(T const& element, size_t filter_size) // sha224
+long long h3(T const& element, size_t filter_size) // sha256
 {
-    return 3;
+    string hash = SHA256((char*)element);
+    BigInt n(hexToDecimalString(hash));
+    n %= filter_size;
+
+    return n.to_long_long();
 }
