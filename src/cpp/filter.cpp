@@ -35,7 +35,14 @@ class Filter
     template <typename T>
     bool query(T const& element)
     {
-        return true;
+        long long hash_value[] = {h1(element, length), h2(element, length), h3(element, length)};
+        for (long long a: hash_value)
+        {
+            if (data[a] == 0)
+                return false;
+        }
+
+        return true; // probably in the filter
     }
 
     double calculateFPRate()
@@ -48,6 +55,9 @@ class Filter
 int main()
 {
     Filter f = Filter();
-    f.insert("goomba");
+    f.insert("roomba");
+    cout << f.query("goober") << endl;
+    cout << f.query("roomba") << endl;
+
     return 0;
 }
