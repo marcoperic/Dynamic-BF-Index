@@ -16,7 +16,7 @@ For a database with millions or billions of accesses at a time, this is unaccept
 
 ## Objectives
 - [x] Create a working Bloom Filter implementation in Python
-- [ ] Port the working implementation to C++
+- [x] Port the working implementation to C++
 - [ ] Port the working implementation to Java
 - [ ] Port the working implementation to Rust
 - [ ] Perform benchmarks and empirical runtime analysis on each implementation
