@@ -8,8 +8,7 @@ class Filter
     const size_t length = 10000; // BF not dynamic yet.
     const int hash_functions = 3;
     bool *data = new bool(length);
-    size_t size = 110;
-    float prob = 0.0;
+    size_t size = 0;
 
     public:
     Filter()
